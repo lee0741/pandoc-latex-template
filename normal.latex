@@ -1,0 +1,57 @@
+\documentclass{article}
+
+\usepackage{fontspec}
+\usepackage{xeCJK}
+\usepackage{titlesec} % Required for customizing header sizes
+\usepackage[a4paper, margin=1in]{geometry} % Set for A4 page size
+
+% Set for font and CJK
+\setmainfont{Noto Sans CJK SC}[
+    BoldFont=Noto Sans CJK SC Bold,
+    ItalicFont=Noto Sans CJK SC Light
+]
+
+% Set Chinese font explicitly
+\setCJKmainfont{Noto Sans CJK SC}[
+    BoldFont=Noto Sans CJK SC Bold,
+    ItalicFont=Noto Sans CJK SC Light
+]
+
+% Improve hyperlink appearance
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,      % Enable colored links (instead of boxes)
+    linkcolor=blue,       % Internal links (e.g., table of contents)
+    citecolor=blue,       % Citation links
+    filecolor=magenta,    % File links
+    urlcolor=red          % External links
+}
+
+% Improve line spacing
+% \usepackage{setspace}
+% \linespread{1.4}
+
+% Disable section numbering
+\setcounter{secnumdepth}{0}
+
+% Fix for \tightlist error
+% \providecommand{\tightlist}{...} defines \tightlist
+% \itemsep controls the spacing between list items
+% \parskip controls the space between paragraphs
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt} \setlength{\parskip}{0pt}}
+
+\begin{document}
+
+% Set font size manually (15pt = 20px)
+% 15pt → Base font size
+% 22.5pt → Line height (1.5 × font size for readability)
+\fontsize{15pt}{22.5pt}\selectfont
+
+% Custom header font sizes (match 15pt body)
+\titleformat{\section}{\fontsize{20pt}{26pt}\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\fontsize{18pt}{24pt}\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\fontsize{16pt}{22pt}\bfseries}{\thesubsubsection}{1em}{}
+
+$body$
+
+\end{document}
